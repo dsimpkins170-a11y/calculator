@@ -1,0 +1,30 @@
+oper = ""
+num1 = ""
+num2 = ""
+
+found_first_number_group = False
+
+seq=input("Input equation here.")
+for char in seq:
+    if char.isdigit():
+        if not found_first_number_group and not oper: 
+            num1 += char
+        elif found_first_number_group and oper: #starts collecting after oper
+            num2 += char
+    else:
+        oper = char
+        found_first_number_group = True
+
+X = int(num1)
+Y = int(num2)
+
+if oper == "*" or "x":
+    ans = X * Y
+if oper == "/":
+    ans = X / Y
+if oper == "+":
+    ans = X + Y
+if oper == "-":
+    ans = X - Y 
+    
+print(ans)

@@ -1,0 +1,22 @@
+import re
+seq=input("Input problem here with spaces.")
+seqU=re.match(r"(\d+)(\D+)(\d+)", seq) #create substrings
+stringX=seqU.group(1) #assign variable to correct substring
+stringY=seqU.group(3) #assign variable to correct substring
+oper=seqU.group(2) #assign variable to correct substring
+
+ans = 0
+
+X = int(stringX)
+Y = int(stringY)
+
+if oper == "+":
+    ans = X + Y
+if oper == "-":
+    ans = X - Y
+if oper == "*" or "x":
+    ans = X * Y
+if oper == "/":
+    ans = X / Y
+
+print(ans)
